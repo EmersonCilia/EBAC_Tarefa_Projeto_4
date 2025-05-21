@@ -1,0 +1,39 @@
+.footer {
+    min-height: 100px;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom:  20px;
+
+    &__logo {
+        height: 20px;
+        position: relative;
+        top: -50px;
+        img {
+            max-height: 100px;
+        }
+    }
+
+    &__plataformas {
+        display: flex;
+        max-height: 50px;
+
+        img {
+            height: 100px;
+            max-width: 100px;
+        }
+    }
+
+    p {
+        text-align: center;
+    }
+    &__redes_sociais{
+        display: flex;
+        padding-top: 30px;
+        padding-bottom: 10px;
+        gap: 10px;
+        
+    }
+}

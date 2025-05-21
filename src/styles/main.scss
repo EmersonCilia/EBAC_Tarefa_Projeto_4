@@ -1,0 +1,135 @@
+@use 'variaveis';
+@use 'header';
+@use 'intro';
+@use 'hero';
+@use 'section_dlc';
+@use 'sass:color';
+@use 'footer';
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Cinzel, sans-serif;
+    list-style: none;
+}
+
+body,
+main,
+section {
+    overflow-x: hidden;
+}
+
+body {
+    background-color: variaveis.$corDeFundo;
+}
+
+@mixin text($fontSize: 16px) {
+    font-size: $fontSize;
+    line-height: $fontSize + 10px;
+    color: variaveis.$corTextoPrincipal;
+}
+
+@mixin title($fontSize: 40px) {
+    @include text($fontSize);
+    color: variaveis.$corTextoSecundario;
+}
+
+.text--big {
+    @include text(18px);
+}
+
+.text {
+    @include text;
+}
+
+.text--small {
+    @include text(12px);
+}
+
+@media (max-width: 768px) {
+    .text--big {
+        @include text(16px);
+    }
+    .text {
+        @include text(14px);
+    }
+
+    .text--small {
+        @include text(12px);
+    }
+}
+
+.link-text {
+    @include text(18px);
+    color: variaveis.$corTextoSecundario;
+    text-decoration: underline
+}
+
+.title--big {
+    @include title(44px);
+}
+
+.title {
+    @include title;
+}
+
+.title--small {
+    @include title(28px);
+}
+
+@media (max-width: 768px) {
+    .title--big {
+        @include title(36px);
+    }
+
+    .title {
+        @include title(30px);
+    }
+
+    .title--small {
+        @include title(24px);
+    }
+}
+
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 60px;
+    font-size: 18px;
+    color: variaveis.$corTextoPrincipal;
+    background-color: variaveis.$corDeFundoBotaoPrimario;
+    text-transform: uppercase;
+    border-radius: 4px;
+    text-decoration: none;
+    padding: 8px 14px;
+    letter-spacing: 1px;
+    border: 1px solid variaveis.$corDeFundoBotaoPrimario;
+
+    &:hover {
+        background-color: color.scale(variaveis.$corDeFundoBotaoPrimario, $lightness: 10%);
+    }
+
+    &--secondary {
+        background-color: variaveis.$corTitutloExpansao;
+        border-color: variaveis.$corTitutloExpansao;
+
+        &:hover {
+            background-color: color.scale(variaveis.$corTitutloExpansao, $lightness: 10%);
+        }
+    }
+
+    &--dark {
+        background-color: rgba(variaveis.$corDeFundoBotaoDark, 0.8);
+        border-color: variaveis.$corDeFundoBotaoSecundario;
+
+        &:hover {
+            background-color: variaveis.$corDeFundoBotaoSecundario;
+            color: variaveis.$corDeFundo;
+        }
+    }
+}

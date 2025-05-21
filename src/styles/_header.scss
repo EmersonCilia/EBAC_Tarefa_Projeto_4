@@ -1,0 +1,79 @@
+@use 'variaveis';
+
+.header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    background-size: 0;
+    transition: background-color .5s ease;
+    z-index: 1;
+
+    @media (max-width: 425px) {
+        display: none;
+    }
+
+    &--is-hidden {
+
+        background-color: transparent;
+
+        .header {
+            &__links__item:last-child {
+                opacity: 0;
+                visibility: hidden;
+                transition:
+                    opacity .5s ease,
+                    visibility .5s ease;
+            }
+        }
+    }
+
+    &__container {
+        height: 0;
+        padding: 0px 36px;
+        display: flex;
+        justify-content: space-between;
+
+        @media (max-width: 768px) {
+            padding: 0 8px 0 8px;
+        }
+    }
+
+    &__logo {
+        margin: 5px;
+        max-height: 60px;
+        transition:
+            opacity .5s ease,
+            visibility .5s ease;
+
+        @media (max-width: 768px) {
+            max-width: 40px;
+            max-height: 40px;
+        }
+    }
+
+    &__links {
+
+        display: flex;
+
+        &__item {
+            margin: 5px;
+            transition:
+                opacity .5s ease,
+                visibility .5s ease;
+        }
+    }
+
+    .button {
+        height: 50px;
+
+
+        @media (max-width: 768px) {
+            font-size: 12px;
+            padding: 8px 11px;
+            height: 40px;
+            letter-spacing: 0;
+            white-space: nowrap
+        }
+    }
+}

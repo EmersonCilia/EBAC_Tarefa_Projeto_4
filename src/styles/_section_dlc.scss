@@ -1,0 +1,160 @@
+@use 'variaveis';
+
+.section_dlc {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__container {
+
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        min-height: 300px;
+        justify-content: center;
+        align-items: center;
+
+        h3 {
+            margin: 40px 0;
+            text-shadow: 4px 4px 10px black;
+        }
+
+    }
+
+    &__tabs {
+        display: flex;
+        margin-bottom: 40px;
+        gap: 10px;
+
+
+
+        @media (min-width: 480px) and (max-width: 1024px) {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        @media (max-width: 480px) {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        &__buttons {
+            max-width: 170px;
+            cursor: pointer;
+            @media (max-width: 1024px) {
+                margin-bottom: 10px;
+            }
+
+            &--is-active {
+                color: variaveis.$corTextoPrincipal !important;
+                background-color: variaveis.$corDeFundoBotaoPrimario !important;
+            }
+        }
+
+        &__items {
+            display: none;
+
+            &--is-active {
+                max-width: 1400px;
+                min-height: 80vh;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                align-items: center;
+                width: 100%;
+
+                @media (max-width: 1024px) {
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+
+            div {
+                margin: 40px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                img {
+
+                    margin-bottom: 20px;
+                    max-height: 280px;
+
+                    @media (max-width: 480px) {
+                        max-width: 320px;
+                    }
+                }
+
+                button {
+                    max-width: 460px;
+
+                    @media (max-width: 480px) {
+                        max-width: 320px;
+                    }
+                }
+            }
+
+
+            p {
+                color: variaveis.$corTextoPrincipal;
+                padding: 40px;
+                background-color: rgba(0, 0, 0, 0.8);
+                text-justify: auto;
+
+                @media (max-width: 480px) {
+                    padding: 20px;
+                }
+            }
+        }
+    }
+}
+
+[data-tab-id="evoluções_sinistras"].section_dlc__tabs__items--is-active {
+    background-image: url(../../src/images/sinister_bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 60px;
+
+}
+
+[data-tab-id="reliquias_dracula"].section_dlc__tabs__items--is-active {
+    background-image: url(../../src/images/dracula_bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 60px;
+
+}
+
+[data-tab-id="linhagem_ancestral"].section_dlc__tabs__items--is-active {
+    background-image: url(../../src/images/ancestral_bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 60px;
+
+}
+
+[data-tab-id="legado_castlevania"].section_dlc__tabs__items--is-active {
+    background-image: url(../../src/images/castlevania_bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 60px;
+}
+
+[data-tab-id="dominancia_eterna"].section_dlc__tabs__items--is-active {
+    background-image: url(../../src/images/dominance_bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 60px;
+}
+
+[data-tab-id="bundle_completo"].section_dlc__tabs__items--is-active {
+    background-image: url(../../src/images/bundle.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 60px;
+
+}
