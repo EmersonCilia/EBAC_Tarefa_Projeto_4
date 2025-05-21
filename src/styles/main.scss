@@ -133,3 +133,9 @@ body {
         }
     }
 }
+
+.gradient-text {
+    background: linear-gradient(#99f70c, #99f70c, #053307, #28eb0e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
